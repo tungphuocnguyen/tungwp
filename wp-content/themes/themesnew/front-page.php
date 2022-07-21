@@ -198,10 +198,6 @@
       <p class="custom_heading-text">
       <?php echo $freshfruits['section_text'];?>
       </p>
-
-
-   
-   
    <div class="row layout_padding2">
         <div class="col-md-8">
           <div class="fruit_detail-box">
@@ -227,14 +223,6 @@
           </div>
         </div>
       </div>
-
-
-
-
-
-
-
-
 
       <div class="row layout_padding2">
         <div class="col-md-8">
