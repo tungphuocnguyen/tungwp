@@ -47,3 +47,13 @@ function addjs()
 
 }
 // add_action( 'wp_enqueue_scripts', 'addjs');
+
+
+
+
+
+
+
+
+// custom image size
+add_image_size('product_image_small',100,225,false);
