@@ -191,28 +191,31 @@
   <!-- end service section -->
 
   <!-- fruits section -->
-  <?php $freshfruits = get_field('fresh_fruits');?>
+
   <section class="fruit_section">
     <div class="container">
+    <?php $freshfruits = get_field('fresh_fruits');?>
       <h2 class="custom_heading"><?php echo $freshfruits['section_title'];?></h2>
       <p class="custom_heading-text">
       <?php echo $freshfruits['section_text'];?>
       </p>
 
 
-   
+   <?php while( have_rows('fresh_fruits_list') ): the_row();
+         $image = get_sub_field('image');
+         $title = get_sub_field('title');
+         $description = get_sub_field('description');
+         $link = get_sub_field('link');
+    ?>
    
    <div class="row layout_padding2">
         <div class="col-md-8">
           <div class="fruit_detail-box">
             <h3>
-              Best Fresh Orange
+              <?php echo $title; ?>
             </h3>
             <p class="mt-4 mb-5">
-              but the majority have suffered alteration in some form, by
-              injected humour, or randomised words which don't look even
-              slightly believable. If you are going to use a passage of Lorem
-              Ipsum, you need to be
+              <?php echo $description; ?>
             </p>
             <div>
               <a href="" class="custom_dark-btn">
@@ -223,20 +226,16 @@
         </div>
         <div class="col-md-4 d-flex justify-content-center align-items-center">
           <div class="fruit_img-box d-flex justify-content-center align-items-center">
-            <img src="<?php bloginfo('template_directory');?>/images/orange.png" alt="" class="" width="250px" />
+            <img src="<?php echo $image['url'];?>" alt="" class="" width="250px" />
           </div>
         </div>
       </div>
 
 
+<?php endwhile; ?>
 
 
-
-
-
-
-
-      <div class="row layout_padding2">
+      <!-- <div class="row layout_padding2">
         <div class="col-md-8">
           <div class="fruit_detail-box">
             <h3>
@@ -285,17 +284,18 @@
             <img src="<?php bloginfo('template_directory');?>/images/gauva.png" alt="" class="" width="250px" />
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 
   <!-- end fruits section -->
 
   <!-- tasty section -->
+  <?php $verytastyfruits = get_field('very_tasty_fruits');?>
   <section class="tasty_section">
     <div class="container_fluid">
       <h2>
-        Very tasty fruits
+      <?php echo $verytastyfruits['title'];?>
       </h2>
     </div>
   </section>
@@ -306,12 +306,15 @@
 
   <section class="client_section layout_padding">
     <div class="container">
-      <h2 class="custom_heading">Testimonial</h2>
+
+
+    <?php $testimonial = get_field('testimonial');?>
+      <h2 class="custom_heading"><?php echo $testimonial['section_title'];?></h2>
       <p class="custom_heading-text">
-        There are many variations of passages of Lorem Ipsum available, but
-        the majority have
+      <?php echo $testimonial['section_desc'];?>
       </p>
       <div>
+
         <div id="carouselExampleControls-2" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -391,38 +394,20 @@
   <!-- end client section -->
 
   <!-- contact section -->
+  <?php $contact = get_field('contact');?>
   <section class="contact_section layout_padding">
     <div class="container">
       <h2 class="font-weight-bold">
-        Contact Us
+      <?php echo $contact['contact_title'];?>
       </h2>
       <div class="row">
         <div class="col-md-8 mr-auto">
           <form action="">
             <div class="contact_form-container">
               <div>
-                <div>
-                  <input type="text" placeholder="Name">
-                </div>
-                <div>
-                  <input type="text" placeholder="Phone Number">
-                </div>
-                <div>
-                  <input type="email" placeholder="Email">
-                </div>
-
-                <div class="mt-5">
-                  <input type="text" placeholder="Message">
-                </div>
-                <div class="mt-5">
-                  <button type="submit">
-                    send
-                  </button>
-                </div>
+              	<?php echo apply_shortcodes( '[contact-form-7 id="1234" title="Contact form 1"]' ); ?>
               </div>
-
             </div>
-
           </form>
         </div>
       </div>
