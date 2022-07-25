@@ -141,7 +141,8 @@
 
 
   <?php $ourservices = get_field('our_services');?>
-
+  <?php $ourserviceslist = get_field('our_services_list');?>
+  
 
   <section class="service_section layout_padding ">
     <div class="container">
@@ -149,42 +150,39 @@
       <p class="custom_heading-text">
       <?php echo $ourservices['section_desc'];?>
       </p>
+    
       <div class=" layout_padding2">
+      <?php while( have_rows('our_services_list') ): the_row();
+         $image = get_sub_field('image');
+         $title = get_sub_field('title');
+         $description = get_sub_field('description');
+    ?>
         <div class="card-deck">
+    
           <div class="card">
-            <img class="card-img-top" src="<?php bloginfo('template_directory');?>/images/card-item-1.png" alt="Card image cap" />
+      
+
+            <img class="card-img-top" src="<?php echo $image['url'];?>" alt="Card image cap" />
             <div class="card-body">
-              <h5 class="card-title"><?php echo $ourservices['title_orange'];?></h5>
+              <h5 class="card-title"><?php echo $title; ?></h5>
               <p class="card-text">
-              <?php echo $ourservices['desc'];?>
+              <?php echo $description; ?>
               </p>
             </div>
+           
           </div>
-          <div class="card">
-            <img class="card-img-top" src="<?php bloginfo('template_directory');?>/images/card-item-2.png" alt="Card image cap" />
-            <div class="card-body">
-              <h5 class="card-title"><?php echo $ourservices['title_grapes'];?></h5>
-              <p class="card-text">
-              <?php echo $ourservices['desc'];?>
-              </p>
-            </div>
+         
           </div>
-          <div class="card">
-            <img class="card-img-top" src="<?php bloginfo('template_directory');?>/images/card-item-3.png" alt="Card image cap" />
-            <div class="card-body">
-              <h5 class="card-title"><?php echo $ourservices['title_gauva'];?></h5>
-              <p class="card-text">
-              <?php echo $ourservices['desc'];?>
-              </p>
-            </div>
-          </div>
+         
         </div>
+        <?php endwhile; ?>
       </div>
       <div class="d-flex justify-content-center">
         <a href="" class="custom_dark-btn">
         <?php echo $ourservices['button_text'];?>
         </a>
       </div>
+   
     </div>
   </section>
 
@@ -419,111 +417,109 @@
   <!-- map section -->
   <section class="map_section">
     <div id="map" class="h-100 w-100 ">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d99029.84505283511!2d-84.61044109524899!3d39.13645224401073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884051b1de3821f9%3A0x69fb7e8be4c09317!2zQ2luY2lubmF0aSwgT2hpbywgSG9hIEvhu7M!5e0!3m2!1svi!2s!4v1658717392667!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
 
   <!-- end map section -->
-
+  <?php $Footer = get_field('footer');?>
   <section class="info_section layout_padding">
     <div class="container">
       <div class="row">
         <div class="col-md-3">
           <h5>
-            Fruits
+          <?php echo $Footer['fruits'];?>
           </h5>
           <ul>
             <li>
-              randomised
+            <?php echo $Footer['randomised'];?>
+            <li>
+            <?php echo $Footer['words_which'];?>
             </li>
             <li>
-              words which
+            <?php echo $Footer['dont_look_even'];?>
             </li>
             <li>
-              don't look even
+            <?php echo $Footer['slightly'];?>
             </li>
             <li>
-              slightly
+            <?php echo $Footer['believable_if_you'];?>
             </li>
             <li>
-              believable. If you
+            <?php echo $Footer['are_going_to_use'];?>
             </li>
             <li>
-              are going to use
+            <?php echo $Footer['a_passage_of'];?>
             </li>
             <li>
-              a passage of
-            </li>
-            <li>
-              Lorem Ipsum,
+            <?php echo $Footer['lorem_ipsum'];?>
             </li>
           </ul>
         </div>
         <div class="col-md-3">
           <h5>
-            Services
+          <?php echo $Footer['services'];?>
           </h5>
           <ul>
+          <li>
+            <?php echo $Footer['randomised'];?>
             <li>
-              randomised
+            <?php echo $Footer['words_which'];?>
             </li>
             <li>
-              words which
+            <?php echo $Footer['dont_look_even'];?>
             </li>
             <li>
-              don't look even
+            <?php echo $Footer['slightly'];?>
             </li>
             <li>
-              slightly
+            <?php echo $Footer['believable_if_you'];?>
             </li>
             <li>
-              believable. If you
+            <?php echo $Footer['are_going_to_use'];?>
             </li>
             <li>
-              are going to use
+            <?php echo $Footer['a_passage_of'];?>
             </li>
             <li>
-              a passage of
-            </li>
-            <li>
-              Lorem Ipsum,
+            <?php echo $Footer['lorem_ipsum'];?>
             </li>
           </ul>
         </div>
         <div class="col-md-3">
           <h5>
-            List
+          <?php echo $Footer['list'];?>
           </h5>
           <ul>
+          <li>
+            <?php echo $Footer['randomised'];?>
             <li>
-              randomised
+            <?php echo $Footer['words_which'];?>
             </li>
             <li>
-              words which
+            <?php echo $Footer['dont_look_even'];?>
             </li>
             <li>
-              don't look even
+            <?php echo $Footer['slightly'];?>
             </li>
             <li>
-              slightly
+            <?php echo $Footer['believable_if_you'];?>
             </li>
             <li>
-              believable. If you
+            <?php echo $Footer['are_going_to_use'];?>
             </li>
             <li>
-              are going to use
+            <?php echo $Footer['a_passage_of'];?>
             </li>
             <li>
-              a passage of
-            </li>
-            <li>
-              Lorem Ipsum,
+            <?php echo $Footer['lorem_ipsum'];?>
             </li>
           </ul>
         </div>
         <div class="col-md-3">
           <div class="social_container">
             <h5>
-              Follow Us
+            <?php echo $Footer['follow_us'];?>
             </h5>
             <div class="social-box">
               <a href="">
@@ -543,14 +539,11 @@
           </div>
           <div class="subscribe_container">
             <h5>
-              Subscribe Now
+            <?php echo $Footer['subscribe_now'];?>
             </h5>
             <div class="form_container">
               <form action="">
-                <input type="email">
-                <button type="submit">
-                  Subscribe
-                </button>
+              <?php echo apply_shortcodes( '[contact-form-7 id="125" title="Subscribe Form"]' ); ?>
               </form>
             </div>
           </div>
