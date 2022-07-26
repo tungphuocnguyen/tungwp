@@ -152,16 +152,15 @@
       </p>
     
       <div class=" layout_padding2">
-      <?php while( have_rows('our_services_list') ): the_row();
+    
+        <div class="card-deck">
+        <?php while( have_rows('our_services_list') ): the_row();
          $image = get_sub_field('image');
          $title = get_sub_field('title');
          $description = get_sub_field('description');
     ?>
-        <div class="card-deck">
-    
-          <div class="card">
-      
 
+          <div class="card">
             <img class="card-img-top" src="<?php echo $image['url'];?>" alt="Card image cap" />
             <div class="card-body">
               <h5 class="card-title"><?php echo $title; ?></h5>
@@ -171,12 +170,13 @@
             </div>
            
           </div>
-         
+          <?php endwhile; ?>
           </div>
          
         </div>
-        <?php endwhile; ?>
+        
       </div>
+
       <div class="d-flex justify-content-center">
         <a href="" class="custom_dark-btn">
         <?php echo $ourservices['button_text'];?>
@@ -315,29 +315,26 @@
 
         <div id="carouselExampleControls-2" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
-            <div class="carousel-item active">
+          <?php 
+            $rows = get_field('testimonial_slider');
+            if( $rows ) {
+                  echo '<ul class="slides">';
+                 foreach( $rows as $row ) {
+                  $image = $row['Image'];
+                echo '<li>';
+                      echo wp_get_attachment_image( $image, 'full' );
+                      echo wpautop( $row['title'] );
+                      echo wpautop( $row['description'] );
+
+                echo '</li>';
+              }
+            echo '</ul>';
+           }?>
+        
+           <!-- <div class="carousel-item active">
               <div class="client_container layout_padding2">
                 <div class="client_img-box">
-                  <img src="<?php bloginfo('template_directory');?>/images/client.png" alt="" />
-                </div>
-                <div class="client_detail">
-                  <h3>
-                    Johnhex
-                  </h3>
-                  <p class="custom_heading-text">
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority have suffered alteration in
-                    some form, by injected humour, or randomised words which
-                    don't look even slightly believable. If you are <br />
-                    going to use a passage of Lorem Ipsum, you need to be sure
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="client_container layout_padding2">
-                <div class="<?php bloginfo('template_directory');?>/client_img-box">
-                  <img src="images/client.png" alt="" />
+                <img src="<?php bloginfo('template_directory');?>/images/client.png" alt="" />
                 </div>
                 <div class="client_detail">
                   <h3>
@@ -356,6 +353,25 @@
             <div class="carousel-item">
               <div class="client_container layout_padding2">
                 <div class="client_img-box">
+                <img src="<?php bloginfo('template_directory');?>/images/client.png" alt="" />
+                </div>
+                <div class="client_detail">
+                  <h3>
+                    Johnhex
+                  </h3>
+                  <p class="custom_heading-text">
+                    There are many variations of passages of Lorem Ipsum
+                    available, but the majority have suffered alteration in
+                    some form, by injected humour, or randomised words which
+                    don't look even slightly believable. If you are <br />
+                    going to use a passage of Lorem Ipsum, you need to be sure
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="client_container layout_padding2">
+                <div class="client_img-box">
                   <img src="<?php bloginfo('template_directory');?>/images/client.png" alt="" />
                 </div>
                 <div class="client_detail">
@@ -372,7 +388,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="custom_carousel-control">
             <a class="carousel-control-prev" href="#carouselExampleControls-2" role="button" data-slide="prev">
               <span class="" aria-hidden="true"></span>
@@ -388,6 +404,7 @@
       </div>
     </div>
   </section>
+
 
   <!-- end client section -->
 
