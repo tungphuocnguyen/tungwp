@@ -13,6 +13,7 @@ function load_stylesheets()
 
   wp_register_style('respon', get_template_directory_uri() . '/css/responsive.css', array(), 1, 'all');
   wp_enqueue_style('respon');
+  
 
 }
 
@@ -46,7 +47,7 @@ function addjs()
 
 
 }
-// add_action( 'wp_enqueue_scripts', 'addjs');
+add_action( 'wp_enqueue_scripts', 'addjs');
 
 
 
@@ -57,3 +58,15 @@ function addjs()
 
 // custom image size
 add_image_size('product_image_small',100,225,false);
+
+
+
+
+add_theme_support('menus');
+
+register_nav_menus(
+  array(
+    // 'top-menu' => _('Top Menu','theme'),
+
+  )
+  );
