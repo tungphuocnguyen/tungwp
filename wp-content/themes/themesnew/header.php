@@ -38,7 +38,7 @@
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
           <a class="navbar-brand" href="index.html">
-            <img src="<?php bloginfo('template_directory');?>/images/logo.png" alt="" /><span>
+            <img src="<?php echo get_field('header_logo', 'option') ?>" alt="" /><span>
               Tropiko
             </span>
           </a>
