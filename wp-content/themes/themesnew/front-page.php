@@ -318,17 +318,17 @@
           <?php 
             $rows = get_field('testimonial_slider');
             if( $rows ) {
-                  echo '<ul class="slides">';
+                  echo '<div class="carousel-item active">';
                  foreach( $rows as $row ) {
-                  $image = $row['Image'];
-                echo '<li>';
+                  $image = $row['image'];
+                echo '<div class="client_container layout_padding">';
                       echo wp_get_attachment_image( $image, 'full' );
                       echo wpautop( $row['title'] );
                       echo wpautop( $row['description'] );
 
-                echo '</li>';
+                echo '</div>';
               }
-            echo '</ul>';
+            echo '</div>';
            }?>
         
            <!-- <div class="carousel-item active">
