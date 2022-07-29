@@ -38,8 +38,9 @@
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
           <a class="navbar-brand" href="index.html">
-            <img src="<?php echo get_field('header_logo', 'option') ?>" alt="" /><span>
-              Tropiko
+            <img src="<?php echo get_field('header_logo', 'option') ?>" alt="" />
+            <span>
+            <?php echo get_field('header_title', 'option') ?>
             </span>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -77,7 +78,7 @@
             </div>
             <div class="quote_btn-container ml-0 ml-lg-4 d-flex justify-content-center">
               <a href="">
-                Get A quote
+              <?php echo get_field('header_button_right', 'option') ?>
               </a>
             </div>
           </div>

@@ -140,28 +140,28 @@
   <!-- service section -->
 
 
-  <?php $ourservices = get_field('our_services');?>
-  <?php $ourserviceslist = get_field('our_services_list');?>
+  <?php $ourservices = get_field('our_services','option');?>
+<?php $ourserviceslist = get_field('our_service_list','option');?>
   
 
   <section class="service_section layout_padding ">
     <div class="container">
-      <h2 class="custom_heading"><?php echo $ourservices['section_title'];?></h2>
+      <h2 class="custom_heading"><?php echo get_field('title_service','option');?></h2>
       <p class="custom_heading-text">
-      <?php echo $ourservices['section_desc'];?>
+      <?php echo get_field('descrip_service','option');?>
       </p>
     
       <div class=" layout_padding2">
     
         <div class="card-deck">
-        <?php while( have_rows('our_services_list') ): the_row();
-         $image = get_sub_field('image');
+        <?php while( have_rows('our_service_list','option') ): the_row();
+         $image =  get_sub_field('image');
          $title = get_sub_field('title');
          $description = get_sub_field('description');
     ?>
 
           <div class="card">
-            <img class="card-img-top" src="<?php echo $image['url'];?>" alt="Card image cap" />
+            <img class="card-img-top" src="<?php echo $image;?>" alt="Card image cap" />
             <div class="card-body">
               <h5 class="card-title"><?php echo $title; ?></h5>
               <p class="card-text">
@@ -179,7 +179,7 @@
 
       <div class="d-flex justify-content-center">
         <a href="" class="custom_dark-btn">
-        <?php echo $ourservices['button_text'];?>
+        <?php echo get_field('button_service','group');?>
         </a>
       </div>
    
@@ -192,17 +192,17 @@
 
   <section class="fruit_section">
     <div class="container">
-    <?php $freshfruits = get_field('fresh_fruits');?>
-      <h2 class="custom_heading"><?php echo $freshfruits['section_title'];?></h2>
+    
+      <h2 class="custom_heading"><?php echo get_field('title_fruits','option');?></h2>
       <p class="custom_heading-text">
-      <?php echo $freshfruits['section_text'];?>
+      <?php echo get_field('description_fruits','option');?>
       </p>
 
 
-   <?php while( have_rows('fresh_fruits_list') ): the_row();
-         $image = get_sub_field('image');
-         $title = get_sub_field('title');
-         $description = get_sub_field('description');
+   <?php while( have_rows('fruits_list','option') ): the_row();
+         $image = get_sub_field('image_fruits');
+         $title = get_sub_field('title_fruits');
+         $description = get_sub_field('description_fruits');
          $link = get_sub_field('link');
     ?>
    
@@ -224,7 +224,7 @@
         </div>
         <div class="col-md-4 d-flex justify-content-center align-items-center">
           <div class="fruit_img-box d-flex justify-content-center align-items-center">
-            <img src="<?php echo $image['url'];?>" alt="" class="" width="250px" />
+            <img src="<?php echo $image;?>" alt="" class="" width="250px" />
           </div>
         </div>
       </div>
@@ -232,57 +232,6 @@
 
 <?php endwhile; ?>
 
-
-      <!-- <div class="row layout_padding2">
-        <div class="col-md-8">
-          <div class="fruit_detail-box">
-            <h3>
-              Best Fresh Grapes
-            </h3>
-            <p class="mt-4 mb-5">
-              but the majority have suffered alteration in some form, by
-              injected humour, or randomised words which don't look even
-              slightly believable. If you are going to use a passage of Lorem
-              Ipsum, you need to be
-            </p>
-            <div>
-              <a href="" class="custom_dark-btn">
-                Buy Now
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 d-flex justify-content-center align-items-center">
-          <div class="fruit_img-box d-flex justify-content-center ">
-            <img src="<?php bloginfo('template_directory');?>/images/grapes.png" alt="" class="" width="100px" />
-          </div>
-        </div>
-      </div>
-      <div class="row layout_padding2-top layout_padding-bottom">
-        <div class="col-md-8">
-          <div class="fruit_detail-box">
-            <h3>
-              Best Fresh Gauva
-            </h3>
-            <p class="mt-4 mb-5">
-              but the majority have suffered alteration in some form, by
-              injected humour, or randomised words which don't look even
-              slightly believable. If you are going to use a passage of Lorem
-              Ipsum, you need to be
-            </p>
-            <div>
-              <a href="" class="custom_dark-btn">
-                Buy Now
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 d-flex justify-content-center align-items-center">
-          <div class="fruit_img-box d-flex justify-content-center align-items-center">
-            <img src="<?php bloginfo('template_directory');?>/images/gauva.png" alt="" class="" width="250px" />
-          </div>
-        </div>
-      </div> -->
     </div>
   </section>
 
