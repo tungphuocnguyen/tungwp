@@ -1,20 +1,22 @@
+<div style="height:0;" >
 <?php
 /*
  * Template Name: TEMPLATE FRUITS
  */
 
- get_header(); ?>
+ get_header();  ?>
+
+</div>
+
  
 
- <section class="fruit_section">
+ <div>
+ <section class="fruit_section layout_padding-top">
     <div class="container">
-    
       <h2 class="custom_heading"><?php echo get_field('title_fruits','option');?></h2>
       <p class="custom_heading-text">
       <?php echo get_field('description_fruits','option');?>
       </p>
-
-
    <?php while( have_rows('fruits_list','option') ): the_row();
          $image = get_sub_field('image_fruits');
          $title = get_sub_field('title_fruits');
@@ -182,5 +184,11 @@
       </div>
     </div>
   </section>
+ </div>
 
+
+
+
+  <div>
   <?php get_footer(); ?>
+  </div>
