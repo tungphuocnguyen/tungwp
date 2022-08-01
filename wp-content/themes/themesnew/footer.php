@@ -1,8 +1,8 @@
 
-<?php $FooterBelow = get_field('footer_below');?>
+
 <section class="container-fluid footer_section">
     <p>
-    <?php echo $FooterBelow['footer_below_title'];?>
+    <?php echo get_field('footer_below_text','option');?>
     </p>
   </section>
   <!-- footer section -->
@@ -42,3 +42,4 @@
 </body>
 
 </html>
+
