@@ -21,6 +21,7 @@
          $image = get_sub_field('image_fruits');
          $title = get_sub_field('title_fruits');
          $description = get_sub_field('description_fruits');
+         $button = get_sub_field('button_fruits');
          $link = get_sub_field('link');
     ?>
    
@@ -35,7 +36,7 @@
             </p>
             <div>
               <a href="" class="custom_dark-btn">
-                Buy Now
+              <?php echo $button; ?>
               </a>
             </div>
           </div>
@@ -152,27 +153,27 @@
         <div class="col-md-3">
           <div class="social_container">
             <h5>
-            <?php echo $Footer['follow_us'];?>
+            <?php echo get_field('follow_us_footer','option');?>
             </h5>
             <div class="social-box">
               <a href="">
-                <img src="<?php bloginfo('template_directory');?>/images/fb.png" alt="">
+                <img src="<?php echo get_field('facebook', 'option') ?>" alt="">
               </a>
 
               <a href="">
-                <img src="<?php bloginfo('template_directory');?>/images/twitter.png" alt="">
+                <img src="<?php echo get_field('twitter', 'option') ?>" alt="">
               </a>
               <a href="">
-                <img src="<?php bloginfo('template_directory');?>/images/linkedin.png" alt="">
+                <img src="<?php echo get_field('linkedin', 'option') ?>" alt="">
               </a>
               <a href="">
-                <img src="<?php bloginfo('template_directory');?>/images/instagram.png" alt="">
+                <img src="<?php echo get_field('instagram', 'option') ?>" alt="">
               </a>
             </div>
           </div>
           <div class="subscribe_container">
             <h5>
-            <?php echo $Footer['subscribe_now'];?>
+            <?php echo get_field('subscribe_now_footer','option');?>
             </h5>
             <div class="form_container">
               <form action="">

@@ -137,6 +137,21 @@
     <!-- end slider section -->
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- service section -->
 
 
@@ -179,7 +194,7 @@
 
       <div class="d-flex justify-content-center">
         <a href="" class="custom_dark-btn">
-        <?php echo get_field('button_service','group');?>
+        <?php echo get_field('button_service','option');?>
         </a>
       </div>
    
@@ -203,12 +218,13 @@
          $image = get_sub_field('image_fruits');
          $title = get_sub_field('title_fruits');
          $description = get_sub_field('description_fruits');
+         $button = get_sub_field('button_fruits');
          $link = get_sub_field('link');
     ?>
    
    <div class="row layout_padding2">
         <div class="col-md-8">
-          <div class="fruit_detail-box">
+          <div class="fruit_detail-box" >
             <h3>
               <?php echo $title; ?>
             </h3>
@@ -217,14 +233,14 @@
             </p>
             <div>
               <a href="" class="custom_dark-btn">
-                Buy Now
+              <?php echo $button; ?>
               </a>
             </div>
           </div>
         </div>
         <div class="col-md-4 d-flex justify-content-center align-items-center">
           <div class="fruit_img-box d-flex justify-content-center align-items-center">
-            <img src="<?php echo $image;?>" alt="" class="" width="250px" />
+            <img src="<?php echo $image;?>" alt="" class=""  />
           </div>
         </div>
       </div>
@@ -271,7 +287,7 @@
                  foreach( $rows as $row ) {
                   $image = $row['image'];
                 echo '<div class="client_container layout_padding">';
-                      echo wp_get_attachment_image( $image, 'full' );
+                      echo wp_get_attachment_image( $image );
                       echo wpautop( $row['title'] );
                       echo wpautop( $row['description'] );
 
@@ -280,64 +296,7 @@
             echo '</div>';
            }?>
         
-           <!-- <div class="carousel-item active">
-              <div class="client_container layout_padding2">
-                <div class="client_img-box">
-                <img src="<?php bloginfo('template_directory');?>/images/client.png" alt="" />
-                </div>
-                <div class="client_detail">
-                  <h3>
-                    Johnhex
-                  </h3>
-                  <p class="custom_heading-text">
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority have suffered alteration in
-                    some form, by injected humour, or randomised words which
-                    don't look even slightly believable. If you are <br />
-                    going to use a passage of Lorem Ipsum, you need to be sure
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="client_container layout_padding2">
-                <div class="client_img-box">
-                <img src="<?php bloginfo('template_directory');?>/images/client.png" alt="" />
-                </div>
-                <div class="client_detail">
-                  <h3>
-                    Johnhex
-                  </h3>
-                  <p class="custom_heading-text">
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority have suffered alteration in
-                    some form, by injected humour, or randomised words which
-                    don't look even slightly believable. If you are <br />
-                    going to use a passage of Lorem Ipsum, you need to be sure
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="client_container layout_padding2">
-                <div class="client_img-box">
-                  <img src="<?php bloginfo('template_directory');?>/images/client.png" alt="" />
-                </div>
-                <div class="client_detail">
-                  <h3>
-                    Johnhex
-                  </h3>
-                  <p class="custom_heading-text">
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority have suffered alteration in
-                    some form, by injected humour, or randomised words which
-                    don't look even slightly believable. If you are <br />
-                    going to use a passage of Lorem Ipsum, you need to be sure
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div> -->
+          
           <div class="custom_carousel-control">
             <a class="carousel-control-prev" href="#carouselExampleControls-2" role="button" data-slide="prev">
               <span class="" aria-hidden="true"></span>
@@ -388,124 +347,125 @@
   </section>
 
   <!-- end map section -->
-  <?php $Footer = get_field('footer');?>
+  <?php $Footer = get_field('footer','option');?>
   <section class="info_section layout_padding">
     <div class="container">
       <div class="row">
         <div class="col-md-3">
           <h5>
-          <?php echo $Footer['fruits'];?>
+          <?php echo get_field('fruits_footer','option');?>
           </h5>
           <ul>
             <li>
-            <?php echo $Footer['randomised'];?>
+            <?php echo get_field('randomised_footer','option');?>
             <li>
-            <?php echo $Footer['words_which'];?>
+            <?php echo get_field('words_which_footer','option');?>
             </li>
             <li>
-            <?php echo $Footer['dont_look_even'];?>
+            <?php echo get_field('dont_look_even_footer','option');?>
             </li>
             <li>
-            <?php echo $Footer['slightly'];?>
+            <?php echo get_field('slightly_footer','option');?>
             </li>
             <li>
-            <?php echo $Footer['believable_if_you'];?>
+            <?php echo get_field('believable_if_you_footer','option');?>
             </li>
             <li>
-            <?php echo $Footer['are_going_to_use'];?>
+            <?php echo get_field('are_going_to_use_footer','option');?>
             </li>
             <li>
-            <?php echo $Footer['a_passage_of'];?>
+            <?php echo get_field('a_passage_of_footer','option');?>
             </li>
             <li>
-            <?php echo $Footer['lorem_ipsum'];?>
+            <?php echo get_field('lorem_ipsum_footer','option');?>
             </li>
           </ul>
         </div>
         <div class="col-md-3">
           <h5>
-          <?php echo $Footer['services'];?>
+          <?php echo get_field('services_footer','option');?>
           </h5>
           <ul>
-          <li>
-            <?php echo $Footer['randomised'];?>
             <li>
-            <?php echo $Footer['words_which'];?>
+            <?php echo get_field('randomised_footer','option');?>
+            <li>
+            <?php echo get_field('words_which_footer','option');?>
             </li>
             <li>
-            <?php echo $Footer['dont_look_even'];?>
+            <?php echo get_field('dont_look_even_footer','option');?>
             </li>
             <li>
-            <?php echo $Footer['slightly'];?>
+            <?php echo get_field('slightly_footer','option');?>
             </li>
             <li>
-            <?php echo $Footer['believable_if_you'];?>
+            <?php echo get_field('believable_if_you_footer','option');?>
             </li>
             <li>
-            <?php echo $Footer['are_going_to_use'];?>
+            <?php echo get_field('are_going_to_use_footer','option');?>
             </li>
             <li>
-            <?php echo $Footer['a_passage_of'];?>
+            <?php echo get_field('a_passage_of_footer','option');?>
             </li>
             <li>
-            <?php echo $Footer['lorem_ipsum'];?>
+            <?php echo get_field('lorem_ipsum_footer','option');?>
             </li>
           </ul>
         </div>
         <div class="col-md-3">
           <h5>
-          <?php echo $Footer['list'];?>
+          <?php echo get_field('list_footer','option');?>
+
           </h5>
           <ul>
-          <li>
-            <?php echo $Footer['randomised'];?>
             <li>
-            <?php echo $Footer['words_which'];?>
+            <?php echo get_field('randomised_footer','option');?>
+            <li>
+            <?php echo get_field('words_which_footer','option');?>
             </li>
             <li>
-            <?php echo $Footer['dont_look_even'];?>
+            <?php echo get_field('dont_look_even_footer','option');?>
             </li>
             <li>
-            <?php echo $Footer['slightly'];?>
+            <?php echo get_field('slightly_footer','option');?>
             </li>
             <li>
-            <?php echo $Footer['believable_if_you'];?>
+            <?php echo get_field('believable_if_you_footer','option');?>
             </li>
             <li>
-            <?php echo $Footer['are_going_to_use'];?>
+            <?php echo get_field('are_going_to_use_footer','option');?>
             </li>
             <li>
-            <?php echo $Footer['a_passage_of'];?>
+            <?php echo get_field('a_passage_of_footer','option');?>
             </li>
             <li>
-            <?php echo $Footer['lorem_ipsum'];?>
+            <?php echo get_field('lorem_ipsum_footer','option');?>
             </li>
           </ul>
         </div>
         <div class="col-md-3">
           <div class="social_container">
             <h5>
-            <?php echo $Footer['follow_us'];?>
+            <?php echo get_field('follow_us_footer','option');?>
             </h5>
             <div class="social-box">
               <a href="">
-                <img src="<?php bloginfo('template_directory');?>/images/fb.png" alt="">
+                <img src="<?php echo get_field('facebook', 'option') ?>" alt="">
               </a>
 
               <a href="">
-                <img src="<?php bloginfo('template_directory');?>/images/twitter.png" alt="">
+                <img src="<?php echo get_field('twitter', 'option') ?>" alt="">
               </a>
               <a href="">
-                <img src="<?php bloginfo('template_directory');?>/images/linkedin.png" alt="">
+                <img src="<?php echo get_field('linkedin', 'option') ?>" alt="">
               </a>
               <a href="">
-                <img src="<?php bloginfo('template_directory');?>/images/instagram.png" alt="">
+                <img src="<?php echo get_field('instagram', 'option') ?>" alt="">
               </a>
             </div>
           </div>
           <div class="subscribe_container">
             <h5>
-            <?php echo $Footer['subscribe_now'];?>
+            <?php echo get_field('subscribe_now_footer','option');?>
             </h5>
             <div class="form_container">
               <form action="">
@@ -520,3 +480,4 @@
 
 
   <?php get_footer(); ?>
+  

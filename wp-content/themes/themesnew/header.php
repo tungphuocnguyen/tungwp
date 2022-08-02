@@ -32,7 +32,7 @@
 </head>
 
 <body>
-  <div class="hero_area ">
+  <div class="hero_area sub_pages">
     <!-- header section strats -->
     <header class="header_section">
       <div class="container">
@@ -85,3 +85,4 @@
         </nav>
       </div>
     </header>
+</div>
