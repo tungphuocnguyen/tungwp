@@ -11,8 +11,8 @@
  
 
  <div>
- <section class="fruit_section layout_padding-top">
-    <div class="container">
+ <section class="fruit_section layout_padding-top" style="padding-top:150px;">
+    <div class="container fresh-fruits" >
       <h2 class="custom_heading"><?php echo get_field('title_fruits','option');?></h2>
       <p class="custom_heading-text">
       <?php echo get_field('description_fruits','option');?>
@@ -43,7 +43,7 @@
         </div>
         <div class="col-md-4 d-flex justify-content-center align-items-center">
           <div class="fruit_img-box d-flex justify-content-center align-items-center">
-            <img src="<?php echo $image;?>" alt="" class="" width="250px" />
+            <img src="<?php echo $image;?>" alt="" class="" width="" />
           </div>
         </div>
       </div>
@@ -155,21 +155,28 @@
             <h5>
             <?php echo get_field('follow_us_footer','option');?>
             </h5>
+            <?php while( have_rows('Social','option') ): the_row();
+         $face = get_sub_field('facebook_social');
+         $twitter = get_sub_field('twitter_social');
+         $linkedin = get_sub_field('linkedin_social');
+         $instagram = get_sub_field('instagram_social');
+    ?>
             <div class="social-box">
               <a href="">
-                <img src="<?php echo get_field('facebook', 'option') ?>" alt="">
+                <img src="<?php echo $face;?>" alt="">
               </a>
 
               <a href="">
-                <img src="<?php echo get_field('twitter', 'option') ?>" alt="">
+                <img src="<?php echo $twitter;?>" alt="">
               </a>
               <a href="">
-                <img src="<?php echo get_field('linkedin', 'option') ?>" alt="">
+                <img src="<?php echo $linkedin;?>" alt="">
               </a>
               <a href="">
-                <img src="<?php echo get_field('instagram', 'option') ?>" alt="">
+                <img src="<?php echo $instagram;?>" alt="">
               </a>
             </div>
+            <?php endwhile; ?>
           </div>
           <div class="subscribe_container">
             <h5>
