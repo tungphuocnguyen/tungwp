@@ -240,7 +240,7 @@
         </div>
         <div class="col-md-4 d-flex justify-content-center align-items-center">
           <div class="fruit_img-box d-flex justify-content-center align-items-center">
-            <img src="<?php echo $image;?>" alt="" class=""  />
+            <img src="<?php echo $image;?>" alt="" class="abc"  />
           </div>
         </div>
       </div>
@@ -277,26 +277,55 @@
       <?php echo $testimonial['section_desc'];?>
       </p>
       <div>
-
-        <div id="carouselExampleControls-2" class="carousel slide" data-ride="carousel">
+      <?php $testislide = get_field('slide_testimonial');?>
+      <div id="carouselExampleControls-2" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
-          <?php 
-            $rows = get_field('testimonial_slider');
-            if( $rows ) {
-                  echo '<div class="carousel-item active">';
-                 foreach( $rows as $row ) {
-                  $image = $row['image'];
-                echo '<div class="client_container layout_padding">';
-                      echo wp_get_attachment_image( $image );
-                      echo wpautop( $row['title'] );
-                      echo wpautop( $row['description'] );
-
-                echo '</div>';
-              }
-            echo '</div>';
-           }?>
-        
-          
+            <div class="carousel-item active">
+              <div class="client_container layout_padding2">
+                <div class="client_img-box">
+                <img src="<?php bloginfo('template_directory');?>/images/client copy.png" alt="" class="" />
+                </div>
+                <div class="client_detail">
+                  <h3>
+                  <?php echo $testislide['title_testimonial'];?>
+                  </h3>
+                  <p class="custom_heading-text">
+                  <?php echo $testislide['des_testimonial'];?>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="client_container layout_padding2">
+                <div class="client_img-box">
+                <img src="<?php bloginfo('template_directory');?>/images/client copy.png" alt="" class="" />
+                </div>
+                <div class="client_detail">
+                  <h3>
+                  <?php echo $testislide['title_testimonial'];?>
+                  </h3>
+                  <p class="custom_heading-text">
+                  <?php echo $testislide['des_testimonial'];?>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="client_container layout_padding2">
+                <div class="client_img-box">
+                <img src="<?php bloginfo('template_directory');?>/images/client copy.png" alt="" class="" />
+                </div>
+                <div class="client_detail">
+                  <h3>
+                  <?php echo $testislide['title_testimonial'];?>
+                  </h3>
+                  <p class="custom_heading-text">
+                  <?php echo $testislide['des_testimonial'];?>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="custom_carousel-control">
             <a class="carousel-control-prev" href="#carouselExampleControls-2" role="button" data-slide="prev">
               <span class="" aria-hidden="true"></span>
@@ -321,7 +350,7 @@
   <section class="contact_section layout_padding">
     <div class="container">
       <h2 class="font-weight-bold">
-      <?php echo $contact['contact_title'];?>
+      <?php echo get_field('contact_header','option');?>
       </h2>
       <div class="row">
         <div class="col-md-8 mr-auto">
@@ -448,19 +477,16 @@
             <?php echo get_field('follow_us_footer','option');?>
             </h5>
             <div class="social-box">
-              <a href="">
-                <img src="<?php echo get_field('facebook', 'option') ?>" alt="">
+            <?php while( have_rows('Social','option') ): the_row();
+         $icon = get_sub_field('icon_social');
+         $link = get_sub_field('link_social');
+    ?>
+            
+              <a href="<?php echo $link; ?>">
+                <img src="<?php echo $icon;?>" alt="">
               </a>
-
-              <a href="">
-                <img src="<?php echo get_field('twitter', 'option') ?>" alt="">
-              </a>
-              <a href="">
-                <img src="<?php echo get_field('linkedin', 'option') ?>" alt="">
-              </a>
-              <a href="">
-                <img src="<?php echo get_field('instagram', 'option') ?>" alt="">
-              </a>
+            
+            <?php endwhile; ?>
             </div>
           </div>
           <div class="subscribe_container">

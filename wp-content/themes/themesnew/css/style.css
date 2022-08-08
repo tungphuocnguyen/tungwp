@@ -22,7 +22,7 @@ body {
 }
 
 .layout_padding-top {
-  padding-top: 75px;
+  padding-top: 150px;
 }
 
 .layout_padding-bottom {
@@ -420,15 +420,28 @@ a:focus {
 
 }
 
-.contact_form-container button {
+.contact_form-container>div>div >p> input {
   border: none;
   background-color: #fc5d35;
   color: #fff;
   padding: 8px 40px;
   text-transform: uppercase;
   font-size: 14px;
+  width:115px;
+  margin-top: 3rem !important;
 }
-
+.contact_form-container>div>div >p> span> .mess {
+  margin-top: 3rem !important;
+ 
+}
+/* .contact_form-container{
+  border: none;
+  background-color: #fc5d35;
+  color: #fff;
+  padding: 8px 40px;
+  text-transform: uppercase;
+  font-size: 14px;
+} */
 
 /* contact section */
 
@@ -502,3 +515,44 @@ a:focus {
 }
 
 /* end footer section*/
+
+/* .mt-5{
+  border: none;
+    background-color: #fc5d35;
+    color: #fff;
+    padding: 8px 40px;
+    text-transform: uppercase;
+    font-size: 14px;
+} */
+
+.fresh-fruits{
+  margin-top:10px;
+}
+/* .buttons{
+  border: none;
+    background-color: #fc5d35;
+    color: #fff;
+    padding: 8px 40px;
+    text-transform: uppercase;
+    font-size: 14px;
+} */
+.subscribe_container>.form_container>form>.wpcf7 >p> input{
+  background-color: #fc5d35;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 5px 30px;
+    margin-top: 15px;
+    font-size: 15px;
+} 
+/* .container:first-child{
+  width:500px !important;
+} */
+
+/* .fruit_section> .abc:nth-child(1){
+  width:500px !important;
+
+} */
+.menu-main-menu-container>.navbar-nav>.nav-link>a{
+  color: #343434;
+}

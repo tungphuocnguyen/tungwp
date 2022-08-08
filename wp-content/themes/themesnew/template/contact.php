@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php
+/*
+ * Template Name: TEMPLATE Contact
+ */
+ get_header(); ?>
 
 <!-- contact section -->
 <?php $contact = get_field('contact');?>
@@ -125,21 +129,28 @@
             <h5>
             <?php echo get_field('follow_us_footer','option');?>
             </h5>
+            <?php while( have_rows('Social','option') ): the_row();
+         $face = get_sub_field('facebook_social');
+         $twitter = get_sub_field('twitter_social');
+         $linkedin = get_sub_field('linkedin_social');
+         $instagram = get_sub_field('instagram_social');
+    ?>
             <div class="social-box">
               <a href="">
-                <img src="<?php echo get_field('facebook', 'option') ?>" alt="">
+                <img src="<?php echo $face;?>" alt="">
               </a>
 
               <a href="">
-                <img src="<?php echo get_field('twitter', 'option') ?>" alt="">
+                <img src="<?php echo $twitter;?>" alt="">
               </a>
               <a href="">
-                <img src="<?php echo get_field('linkedin', 'option') ?>" alt="">
+                <img src="<?php echo $linkedin;?>" alt="">
               </a>
               <a href="">
-                <img src="<?php echo get_field('instagram', 'option') ?>" alt="">
+                <img src="<?php echo $instagram;?>" alt="">
               </a>
             </div>
+            <?php endwhile; ?>
           </div>
           <div class="subscribe_container">
             <h5>
