@@ -5,25 +5,8 @@
  get_header(); ?>
 
 <!-- contact section -->
-<?php $contact = get_field('contact');?>
-  <section class="contact_section layout_padding">
-    <div class="container">
-      <h2 class="font-weight-bold">
-      <?php echo get_field('contact_header','option');?>
-      </h2>
-      <div class="row">
-        <div class="col-md-8 mr-auto">
-          <form action="">
-            <div class="contact_form-container">
-              <div>
-              	<?php echo apply_shortcodes( '[contact-form-7 id="1234" title="Contact form 1"]' ); ?>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
+<?php get_template_part( 'template-part/contact', 'part' ); ?>
+
   <!-- end contact section -->
   
 
@@ -129,28 +112,16 @@
             <h5>
             <?php echo get_field('follow_us_footer','option');?>
             </h5>
-            <?php while( have_rows('Social','option') ): the_row();
-         $face = get_sub_field('facebook_social');
-         $twitter = get_sub_field('twitter_social');
-         $linkedin = get_sub_field('linkedin_social');
-         $instagram = get_sub_field('instagram_social');
-    ?>
             <div class="social-box">
-              <a href="">
-                <img src="<?php echo $face;?>" alt="">
+            <?php while( have_rows('Social','option') ): the_row();
+             $icon = get_sub_field('icon_social');
+             $link = get_sub_field('link_social');
+            ?>
+              <a href="<?php echo $link; ?>">
+                <img src="<?php echo $icon;?>" alt="">
               </a>
-
-              <a href="">
-                <img src="<?php echo $twitter;?>" alt="">
-              </a>
-              <a href="">
-                <img src="<?php echo $linkedin;?>" alt="">
-              </a>
-              <a href="">
-                <img src="<?php echo $instagram;?>" alt="">
-              </a>
-            </div>
             <?php endwhile; ?>
+            </div>
           </div>
           <div class="subscribe_container">
             <h5>
