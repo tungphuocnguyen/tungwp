@@ -81,7 +81,9 @@ body {
   height: auto;
 }
 
-.header_section {}
+.header_section {
+  
+}
 
 .header_section .container-fluid {
   padding-right: 25px;
@@ -430,6 +432,8 @@ a:focus {
   width:115px;
   margin-top: 3rem !important;
 }
+
+
 .contact_form-container>div>div >p> span> .mess {
   margin-top: 3rem !important;
  
@@ -536,8 +540,23 @@ a:focus {
     text-transform: uppercase;
     font-size: 14px;
 } */
-.subscribe_container>.form_container>form>.wpcf7 >p> input{
+.menu-main-menu-container>.navbar-nav>.nav-link>a{
+  color: #343434;
+}
+
+.contact_form-container>.wpcf7>form>input{
+  border: none;
   background-color: #fc5d35;
+  color: #fff;
+  padding: 8px 40px !important;
+  text-transform: uppercase;
+  font-size: 14px !important;
+  width: 115px;
+  height: 37px;
+
+}
+.subscribe_container>.form_container>form>.wpcf7 >input{
+  background-color: #fc5d35 !important;
     border: none;
     outline: none;
     color: #fff;
@@ -545,14 +564,64 @@ a:focus {
     margin-top: 15px;
     font-size: 15px;
 } 
-/* .container:first-child{
-  width:500px !important;
-} */
-
-/* .fruit_section> .abc:nth-child(1){
-  width:500px !important;
-
-} */
-.menu-main-menu-container>.navbar-nav>.nav-link>a{
+.menu-footer-menu-container>.navbar-nav>.nav-link>a{
   color: #343434;
+}
+.menu-footer-menu-container>.navbar-nav>.nav-link{
+  padding: 0;
+}
+
+.menu-footer-menu-container>.navbar-nav>.nav-link:first-child{
+  margin-bottom: 12px;
+    font-size: 22px;
+}
+.menu-top-menu-container>.navbar-nav>.nav-link>a{
+  color: #343434;
+}
+/* ////// */
+.menu-footer2-menu-container>.navbar-nav>.nav-link{
+  padding: 0;
+}
+.menu-footer2-menu-container>.navbar-nav>.nav-link:first-child{
+  margin-bottom: 12px;
+    font-size: 22px;
+}
+.menu-footer2-menu-container>.navbar-nav>.nav-link>a{
+  color: #343434;
+}
+/* /////// */
+.menu-footer3-menu-container>.navbar-nav>.nav-link{
+  padding: 0;
+}
+.menu-footer3-menu-container>.navbar-nav>.nav-link:first-child{
+  margin-bottom: 12px;
+    font-size: 22px;
+}
+.menu-footer3-menu-container>.navbar-nav>.nav-link>a{
+  color: #343434;
+}
+/* ///////// */
+
+.page-error{
+  margin-left: 47%;
+}
+.footer{
+  margin-top:11px;
+}
+
+/* ////// */
+.search-page{
+  width: 80%;
+  margin:  auto;
+} 
+
+
+/* //////////////////////////////// */
+.footer-page-content{
+  color: #fc5d35 !important;
+
+
+}
+.footer-search{
+  margin-top:14px;
 }

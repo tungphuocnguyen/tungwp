@@ -29,6 +29,10 @@
   <!-- <link href="css/responsive.css" rel="stylesheet" /> -->
 
   <?php wp_head(); ?>
+
+  <script>
+    var $ = jQuery;
+  </script>
 </head>
 
 <body>
@@ -50,13 +54,14 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-            <?php test_menu('Top Menu'); ?>
-              <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-              </form>
+            <?php test_menu('top-menu'); ?>
+              <div class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                <a class="btn  my-2 my-sm-0 nav_search-btn"  href="http://tungwp.me/search"> 
+                </a>
+              </div>
             </div>
             <div class="quote_btn-container ml-0 ml-lg-4 d-flex justify-content-center">
-              <a href="">
+              <a href="http://tungwp.me/search">
               <?php echo get_field('header_button_right', 'option') ?>
               </a>
             </div>
@@ -65,3 +70,4 @@
       </div>
     </header>
 </div>
+

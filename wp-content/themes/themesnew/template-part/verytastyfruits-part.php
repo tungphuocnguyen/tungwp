@@ -2,7 +2,7 @@
   <section class="tasty_section">
     <div class="container_fluid">
       <h2>
-      <?php echo $verytastyfruits['title'];?>
+      <?php echo get_field('verytastyfruit_title','option');?>
       </h2>
     </div>
   </section>

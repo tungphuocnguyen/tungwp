@@ -2,7 +2,7 @@
 
 function load_stylesheets() 
 {
-  wp_register_style('font', get_template_directory_uri() . '/https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css', array(), 1, 'all');
+  wp_register_style('font', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css', array(), 1, 'all');
   wp_enqueue_style('font');
 
   wp_register_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), 1, 'all');
@@ -21,16 +21,13 @@ add_action( 'wp_enqueue_scripts', 'load_stylesheets');
 //load scripts
 function addjs()
 {
-  wp_register_script('jquery', get_template_directory_uri() . '/js/jquery-3.4.1.min.js', array() , 1, 1, 1);
-  wp_enqueue_script('jquery');
-
-  wp_register_script('boostrap', get_template_directory_uri() . '/js/bootstrap.js', array() , 1, 1, 1);
+  wp_register_script('boostrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery') , 1, 1, 1);
   wp_enqueue_script('boostrap');
 
-  wp_register_script('googleapi', get_template_directory_uri() . '/https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap', array() , 1, 1, 1);
+  wp_register_script('googleapi', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap', array('jquery') , 1, 1, 1);
   wp_enqueue_script('googleapi');
 
-  wp_register_script('custom', get_template_directory_uri() . '/custom.js', array() , 1, 1, 1);
+  wp_register_script('custom', get_template_directory_uri() . '/custom.js', array('jquery') , 1, 1, 1);
   wp_enqueue_script('custom');
 
 
@@ -44,11 +41,15 @@ add_image_size('product_image_small',100,225,false);
 register_nav_menus( array(
   'top-menu' => __('Top Menu','theme'),
   'footer-menu' => __('Footer Menu','theme'),
+  'footer2-menu' => __('Footer Menu','theme'),
+  'footer3-menu' => __('Footer Menu','theme'),
+
+
 ));
 if(!function_exists('test_menu')){
   function test_menu($menu){
     $menu = array(
-      'menu'                 => '',
+      'menu'                 => $menu,
       'container_id'         => '',
       'container_aria_label' => '',
       'menu_class'           => 'navbar-nav ',
@@ -97,3 +98,13 @@ register_nav_menus(
     
   }
 
+
+
+//   if ( function_exists( 'wpcf7_enqueue_scripts' ) ) {
+//     wpcf7_enqueue_scripts();
+// }
+
+// if ( function_exists( 'wpcf7_enqueue_styles' ) ) {
+//     wpcf7_enqueue_styles();
+// }
+// ?>

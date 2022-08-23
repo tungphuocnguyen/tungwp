@@ -18,6 +18,8 @@
  * @package WordPress
  */
 
+define('WPCF7_AUTOP', false );
+
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define( 'DB_NAME', 'tungwp' );
@@ -79,7 +81,7 @@ $table_prefix = 'wp_';
  *
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', false );
+define( 'WP_DEBUG', true );
 
 /* Add any custom values between this line and the "stop editing" line. */
 
@@ -90,6 +92,8 @@ define( 'WP_DEBUG', false );
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', __DIR__ . '/' );
+	// define('WPCF7_LOAD_JS', false);
+	// define('WPCF7_LOAD_CSS', false);
 }
 
 /** Sets up WordPress vars and included files. */

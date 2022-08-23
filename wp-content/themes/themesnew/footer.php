@@ -3,6 +3,7 @@
 <section class="container-fluid footer_section">
     <p>
     <?php echo get_field('footer_below_text','option');?>
+    <a href="http://tungwp.me/content/" class="footer-page-content" >Page Content</a>
     </p>
   </section>
   <!-- footer section -->
@@ -42,4 +43,3 @@
 </body>
 
 </html>
-
